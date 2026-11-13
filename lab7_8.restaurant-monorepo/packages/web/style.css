@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background: #f5f6f8;
+  color: #1f2937;
+  margin: 0;
+  padding: 24px;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+h1 {
+  margin-top: 0;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.2fr auto;
+  gap: 8px;
+}
+
+input, select, button {
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+button {
+  background: #b91c1c;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:hover {
+  background: #991b1b;
+}
+
+.error {
+  color: #dc2626;
+  min-height: 20px;
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.search-box input {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.dish-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dish-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+.dish-content {
+  line-height: 1.4;
+}
+
+.dish-date {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+.badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 8px;
+  font-size: 12px;
+  background: #fef2f2;
+  color: #991b1b;
+  border-radius: 999px;
+}
+
+.delete-btn {
+  background: #4b5563;
+}
+
+.delete-btn:hover {
+  background: #374151;
+}
+
+.empty {
+  color: #6b7280;
+  text-align: center;
+  padding: 16px;
+}

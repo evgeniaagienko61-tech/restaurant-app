@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <!-- Встановлюємо кодування сторінки -->
+    <meta charset="UTF-8">
+
+    <!-- Налаштування кросплатформності для мобільних пристроїв -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Назва вкладки браузера -->
+    <title>Restaurant App — кросплатформний застосунок</title>
+
+    <!-- Підключення зовнішнього CSS-файлу -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Хедер сайту -->
+<header class="header">
+    <div class="container">
+        <h1>Restaurant App</h1>
+        <p>Кросплатформний застосунок для ресторану та замовлень</p>
+    </div>
+</header>
+
+<!-- Основний вміст сторінки -->
+<main class="container main">
+    <!-- Секція з описом застосунку -->
+    <section class="card">
+        <h2>Про застосунок</h2>
+        <p>
+            Restaurant App — це навчальний приклад кросплатформного застосунку,
+            який працює у браузері на різних пристроях: комп’ютерах,
+            планшетах і смартфонах.
+        </p>
+
+        <p>
+            Для створення інтерфейсу використано HTML і CSS, а для взаємодії
+            з відвідувачем — JavaScript.
+        </p>
+    </section>
+
+    <!-- Секція з функціями застосунку -->
+    <section class="card">
+        <h2>Основні функції</h2>
+
+        <ul class="features-list">
+            <li>Перегляд меню ресторану з картинками, цінами та описами</li>
+            <li>Додавання страв у кошик до замовлення</li>
+            <li>Бронювання столика онлайн (з перевіркою зайнятості часу)</li>
+            <li>Скасування замовлень або бронювань</li>
+            <li>Адаптивний інтерфейс для будь-якого сучасного браузера</li>
+        </ul>
+    </section>
+
+    <!-- Секція: Меню ресторану (з картинками, цінами та описом) -->
+    <section class="card">
+        <h2>Меню ресторану</h2>
+        <div class="menu-grid">
+            <div class="menu-item-card" data-name="Стейк Рібай" data-price="450">
+                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=500&auto=format&fit=crop&q=60" alt="Стейк Рібай" class="menu-img">
+                <div class="menu-content">
+                    <h3>Стейк Рібай</h3>
+                    <p class="menu-desc">Соковитий яловичий стейк з пряними травами та соусом.</p>
+                    <div class="menu-footer-item">
+                        <span class="price">450 грн</span>
+                        <button class="button add-menu-btn">Додати в кошик</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-item-card" data-name="Піца Маргарита" data-price="260">
+                <img src="https://images.unsplash.com/photo-1604382355076-af4b0eb60143?w=500&auto=format&fit=crop&q=60" alt="Піца Маргарита" class="menu-img">
+                <div class="menu-content">
+                    <h3>Піца Маргарита</h3>
+                    <p class="menu-desc">Класична італійська піца з томатним соусом, моцарелою та базиліком.</p>
+                    <div class="menu-footer-item">
+                        <span class="price">260 грн</span>
+                        <button class="button add-menu-btn">Додати в кошик</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-item-card" data-name="Лосось на грилі" data-price="390">
+                <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=500&auto=format&fit=crop&q=60" alt="Лосось на грилі" class="menu-img">
+                <div class="menu-content">
+                    <h3>Лосось на грилі</h3>
+                    <p class="menu-desc">Ніжне філе лосося з лимонним соусом та свіжими овочами.</p>
+                    <div class="menu-footer-item">
+                        <span class="price">390 грн</span>
+                        <button class="button add-menu-btn">Додати в кошик</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секція для додавання замовлень (кошик) -->
+    <section class="card">
+        <h2>Кошик та замовлення</h2>
+
+        <!-- Поле введення побажань / замовлення -->
+        <input
+                type="text"
+                id="noteInput"
+                class="note-input"
+                placeholder="Введіть побажання до замовлення або назву страви"
+        >
+
+        <!-- Кнопка для додавання -->
+        <button id="addNoteButton" class="button">
+            Додати до замовлення
+        </button>
+
+        <!-- Повідомлення для користувача -->
+        <p id="message" class="message"></p>
+
+        <!-- Сюди JavaScript буде додавати нові замовлення -->
+        <h3 style="margin-top: 20px; color: #b45309;">Список замовлень:</h3>
+        <ul id="notesList" class="notes-list"></ul>
+    </section>
+
+    <!-- Секція: Бронювання столика -->
+    <section class="card">
+        <h2>Бронювання столика</h2>
+        <div class="booking-inputs">
+            <input type="text" id="clientName" class="note-input" placeholder="Ваше ім'я та прізвище">
+            <input type="date" id="bookingDate" class="note-input">
+            <input type="time" id="bookingTime" class="note-input">
+            <button id="bookTableButton" class="button">Забронювати столик</button>
+            <p id="bookingMessage" class="message"></p>
+        </div>
+
+        <h3 style="margin-top: 20px; color: #b45309;">Активні бронювання:</h3>
+        <ul id="bookingList" class="notes-list"></ul>
+    </section>
+
+    <!-- Секція з вибором стека технологій -->
+    <section class="card">
+        <h2>Обраний стек технологій</h2>
+
+        <p>
+            Для цього прикладу використано WebView-підхід, оскільки застосунок
+            реалізовано за допомогою вебтехнологій і він може запускатися
+            у браузері або бути вбудованим у мобільний застосунок через WebView.
+        </p>
+
+        <table class="tech-table">
+            <thead>
+            <tr>
+                <th>Компонент</th>
+                <th>Технологія</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Структура сторінки</td>
+                <td>HTML</td>
+            </tr>
+            <tr>
+                <td>Оформлення</td>
+                <td>CSS</td>
+            </tr>
+            <tr>
+                <td>Логіка</td>
+                <td>JavaScript</td>
+            </tr>
+            <tr>
+                <td>Платформа запуску</td>
+                <td>Браузер / WebView</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+</main>
+
+<!-- Футер сторінки -->
+<footer class="footer">
+    <p>Лабораторна робота 1.2: Основи кросплатформності (Варіант №3)</p>
+</footer>
+
+<!-- Підключення JavaScript-файлу -->
+<script src="script.js"></script>
+</body>
+</html>

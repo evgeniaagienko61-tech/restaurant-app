@@ -1,0 +1,32 @@
+### 1. Отримати всі страви меню
+GET http://localhost:3000/api/dishes
+
+### 2. Створити нову страву
+POST http://localhost:3000/api/dishes
+Content-Type: application/json
+
+{
+  "name": "Борщ український з пампушками",
+  "category": "Перші страви",
+  "price": 165,
+  "description": "Традиційний червоний борщ на яловичому бульйоні зі сметаною та часниковими пампушками",
+  "isAvailable": true
+}
+
+### 3. Отримати страву за ID (підставте реальний _id з відповіді POST)
+GET http://localhost:3000/api/dishes/6af5c8fc0f5b7df79d173557
+
+### 4. Оновити страву (підставте реальний _id)
+PUT http://localhost:3000/api/dishes/6af5c8fc0f5b7df79d173557
+Content-Type: application/json
+
+{
+  "name": "Борщ український фірмовий",
+  "category": "Перші страви",
+  "price": 180,
+  "description": "Подається з салом, зеленою цибулею, сметаною та теплими пампушками",
+  "isAvailable": true
+}
+
+### 5. Видалити страву (підставте реальний _id)
+DELETE http://localhost:3000/api/dishes/6af5c8fc0f5b7df79d173557

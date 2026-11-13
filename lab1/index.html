@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gourmet Restaurant — Кросплатформний застосунок</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <h1>Gourmet Restaurant</h1>
+        <p>Сучасний кросплатформний сервіс замовлень та бронювання</p>
+    </div>
+</header>
+
+<main class="container main">
+    <!-- Секція з описом застосунку -->
+    <section class="card">
+        <h2>Про застосунок</h2>
+        <p>
+            Restaurant App — кросплатформний застосунок для відвідувачів та гостей ресторану.
+            Дозволяє переглядати меню з фото, управління кошиком замовлень та бронювання столиків у декілька кліків.
+        </p>
+        <p>
+            Інтерфейс повністю адаптивний і працює на комп'ютерах, планшетах і смартфонах (WebView-підхід).
+        </p>
+    </section>
+
+    <!-- Секція з функціями застосунку -->
+    <section class="card">
+        <h2>Основні функції</h2>
+        <ul class="features-list">
+            <li>🍳 Перегляд меню з фотографіями, цінами та описами страв</li>
+            <li>🛒 Додавання страв у кошик до замовлення</li>
+            <li>📅 Забронювати столик онлайн із перевіркою зайнятого часу</li>
+            <li>❌ Відміна бронювання столика та видалення замовлень з кошика</li>
+            <li>📱 Адаптивний сучасний дизайн для будь-яких пристроїв</li>
+        </ul>
+    </section>
+
+    <!-- Секція: Меню ресторану -->
+    <section class="card">
+        <h2>Меню ресторану</h2>
+        <div class="menu-grid" id="menuGrid">
+            <div class="menu-item" data-name="Стейк Рібай" data-price="450">
+                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=500&auto=format&fit=crop&q=60" alt="Стейк Рібай">
+                <div class="menu-info">
+                    <h3>Стейк Рібай</h3>
+                    <p class="menu-desc">Соковитий яловичий стейк з пряними травами та соусом.</p>
+                    <div class="menu-footer">
+                        <span class="price">450 грн</span>
+                        <button class="button add-to-cart">У кошик</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-item" data-name="Піца Маргарита" data-price="260">
+                <img src="https://images.unsplash.com/photo-1604382355076-af4b0eb60143?w=500&auto=format&fit=crop&q=60" alt="Піца Маргарита">
+                <div class="menu-info">
+                    <h3>Піца Маргарита</h3>
+                    <p class="menu-desc">Італійська піца з томатним соусом, моцарелою та базиліком.</p>
+                    <div class="menu-footer">
+                        <span class="price">260 грн</span>
+                        <button class="button add-to-cart">У кошик</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-item" data-name="Лосось на грилі" data-price="390">
+                <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=500&auto=format&fit=crop&q=60" alt="Лосось на грилі">
+                <div class="menu-info">
+                    <h3>Лосось на грилі</h3>
+                    <p class="menu-desc">Ніжне філе лосося з лимонним соусом та овочами.</p>
+                    <div class="menu-footer">
+                        <span class="price">390 грн</span>
+                        <button class="button add-to-cart">У кошик</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секція: Кошик та замовлення -->
+    <section class="card">
+        <h2>Кошик та замовлення</h2>
+        <input
+                type="text"
+                id="noteInput"
+                class="note-input"
+                placeholder="Введіть додаткові побажання до замовлення або номер столика"
+        >
+        <button id="addNoteButton" class="button">
+            Оформити замовлення
+        </button>
+        <p id="message" class="message"></p>
+
+        <h3 style="margin-top: 20px; color: #b45309;">Активні замовлення в кошику:</h3>
+        <ul id="notesList" class="notes-list"></ul>
+    </section>
+
+    <!-- Секція: Бронювання столика -->
+    <section class="card">
+        <h2>Бронювання столика</h2>
+        <div class="booking-form">
+            <input type="text" id="clientName" class="note-input" placeholder="Ваше ім'я та прізвище">
+            <input type="date" id="bookingDate" class="note-input">
+            <input type="time" id="bookingTime" class="note-input">
+            <button id="bookTableBtn" class="button">Забронювати столик</button>
+            <p id="bookingMessage" class="message"></p>
+        </div>
+
+        <h3 style="margin-top: 25px; color: #b45309;">Ваші активні бронювання:</h3>
+        <ul id="bookingList" class="notes-list"></ul>
+    </section>
+
+    <!-- Секція з вибором стека технологій -->
+    <section class="card">
+        <h2>Обраний стек технологій</h2>
+        <p>
+            Для цього проєкту використано WebView-підхід. Застосунок побудований на сучасних вебтехнологіях
+            і може запускатися як у веббраузері, так і в якості мобільного додатка.
+        </p>
+
+        <table class="tech-table">
+            <thead>
+            <tr>
+                <th>Компонент</th>
+                <th>Технологія</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Структура сторінки</td>
+                <td>HTML5 (Flexbox / Grid)</td>
+            </tr>
+            <tr>
+                <td>Оформлення</td>
+                <td>CSS3 (Адаптивний дизайн)</td>
+            </tr>
+            <tr>
+                <td>Логіка взаємодії</td>
+                <td>JavaScript (DOM API, Events)</td>
+            </tr>
+            <tr>
+                <td>Платформа запуску</td>
+                <td>Браузер / WebView (Cross-platform)</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+</main>
+
+<footer class="footer">
+    <p>Лабораторна робота: Варіант №3 (Розробка застосунку для ресторану)</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

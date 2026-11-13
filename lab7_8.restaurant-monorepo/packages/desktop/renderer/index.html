@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self'; style-src 'self';"
+  />
+  <title>Меню ресторану (Desktop)</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Меню ресторану (Desktop)</h1>
+
+    <form id="dish-form" class="form-grid" novalidate>
+      <input id="dish-name" type="text" placeholder="Назва страви (напр., Борщ український)" />
+      <input id="dish-price" type="number" step="0.01" placeholder="Ціна, грн" />
+      <select id="dish-category"></select>
+      <button type="submit">Додати страву</button>
+    </form>
+
+    <p id="error-message" class="error" role="alert"></p>
+
+    <div class="search-box">
+      <input id="search-input" type="search" placeholder="Пошук за назвою або категорією..." />
+    </div>
+
+    <ul id="dish-list" class="dish-list"></ul>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>

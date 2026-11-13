@@ -1,0 +1,17 @@
+{
+  "name": "restaurant-monorepo-desktop",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "main.js",
+  "dependencies": {
+    "@restaurant/core": "*"
+  },
+  "devDependencies": {
+    "electron": "^35.0.0"
+  },
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test"
+  }
+}

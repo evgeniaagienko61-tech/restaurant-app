@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'">
+    <title>Ресторанний менеджер Desktop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ресторан: Облік замовлень / Страв</h1>
+        
+        <div class="card">
+            <h2>Додати нову позицію</h2>
+            <div class="form-group">
+                <input type="text" id="itemInput" placeholder="Введіть назву страви або замовлення...">
+                <button id="addItemButton">Додати</button>
+            </div>
+            <p id="message" class="message"></p>
+        </div>
+
+        <div class="card">
+            <h2>Поточний список</h2>
+            <ul id="itemsList"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
